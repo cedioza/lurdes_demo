@@ -1,0 +1,341 @@
+---
+import '../styles/global.css';
+
+const whatsapp = 'https://whats.link/lurdesmarquescabeleireiros';
+const phone = '+351 968 713 607';
+const phoneHref = 'tel:+351968713607';
+const images = [
+  { src: '/images/IMG_4692-scaled.webp', alt: 'Pelo rubio con ondas suaves y acabado luminoso', category: 'loiros', size: 'feature' },
+  { src: '/images/IMG_0509-scaled.webp', alt: 'Pelo moreno largo con ondas y tonos claros', category: 'morenas', size: 'tall' },
+  { src: '/images/EE417CED-E034-4934-A16F-E5000E31FE2C.webp', alt: 'Cabello largo y rizado en rubio cálido', category: 'loiros', size: 'standard' },
+  { src: '/images/3D7EC15D-81A1-4961-A273-A0471E7381C1-scaled.webp', alt: 'Corte corto rizado con reflejos rubios', category: 'curtos', size: 'standard' },
+  { src: '/images/9748B55F-B2F4-437E-BE98-0580C94F178A-scaled.webp', alt: 'Extensiones rubias con ondas marcadas', category: 'extensoes', size: 'wide' },
+  { src: '/images/5BC08D29-4205-498F-8327-A9BCCFBBBD17.webp', alt: 'Cabello corto rubio con textura natural', category: 'curtos', size: 'standard' },
+  { src: '/images/0141B8AF-288F-410F-9986-6FC796DC7F13-scaled.webp', alt: 'Cabello corto cobrizo y rizado', category: 'curtos', size: 'tall' },
+  { src: '/images/602555C8-A343-43EA-98F9-41A0CF133824-scaled.webp', alt: 'Extensiones cortas con movimiento', category: 'extensoes', size: 'standard' },
+  { src: '/images/IMG_3884-scaled.webp', alt: 'Look de cabello largo con acabado brillante', category: 'penteados', size: 'standard' },
+  { src: '/images/FD1FB98C-3B79-4FAB-A35E-07861597975B-scaled.webp', alt: 'Extensiones largas y rubias con ondas', category: 'extensoes', size: 'wide' },
+  { src: '/images/931BB419-75EA-4CEA-847C-91E2B12B7466.webp', alt: 'Cabello corto liso y rubio', category: 'curtos', size: 'standard' },
+  { src: '/images/03562DBA-C0DD-4095-8B30-CB98675A8138.webp', alt: 'Cabello corto claro y rizado', category: 'curtos', size: 'standard' },
+  { src: '/images/0B3AB464-9BD3-4D38-A31F-343BA0732700-scaled.webp', alt: 'Cabello largo castaño con ondas', category: 'morenas', size: 'tall' },
+  { src: '/images/316413BD-A027-4DC0-BAAF-98BFFC0F14F8-scaled.webp', alt: 'Cabello corto con mechas claras', category: 'morenas', size: 'standard' },
+  { src: '/images/C51442A9-B83E-4A1E-A9A5-F063F07B9B39.webp', alt: 'Cabello largo castaño con mechas', category: 'morenas', size: 'wide' },
+  { src: '/images/B8E6B337-4386-46B9-B07A-EE81728B0DCE-scaled.webp', alt: 'Cabello largo castaño y rizado', category: 'morenas', size: 'standard' },
+  { src: '/images/C91363F5-FB11-4D43-AAA7-321731B52060.webp', alt: 'Cabello corto oscuro con reflejos', category: 'curtos', size: 'tall' },
+  { src: '/images/IMG_0505-scaled.webp', alt: 'Cabello corto con textura y volumen', category: 'penteados', size: 'standard' },
+];
+
+const services = {
+  cabelo: ['Corte', 'Brushing', 'Coloración', 'Mechas', 'Flash Balayage', 'Transparencias', 'Glossing', 'Matización', 'Ondulación', 'Alisado'],
+  tratamientos: ['K-Water', 'Fusio-Scrub', 'Fusio-Dose', 'Kera-therapy', 'Protocolo Extensioniste', 'Protocolo Detox', 'Protocolo Genesis', 'Ritual Essencial', 'Ritual Experiência', 'Ritual Régénérant'],
+  manos: ['Manicura', 'Pedicura', 'Exfoliación', 'Esmalte gel', 'Uñas de gel', 'Parafina'],
+};
+const serviceCategories = [
+  { id: 'cabelo', number: '01', title: 'Cabello', description: 'Corte, color y forma para acompañar tu estilo y la textura de tu pelo.', items: services.cabelo },
+  { id: 'tratamientos', number: '02', title: 'Tratamientos', description: 'Rituales de cuidado para devolverle al cabello la atención que pide.', items: services.tratamientos },
+  { id: 'manos', number: '03', title: 'Manos & pies', description: 'Detalles de manicura y pedicura para completar tu momento de cuidado.', items: services.manos },
+];
+---
+
+<html lang="es">
+  <head>
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Lurdes Marques Cabeleireiros en Antas, Porto. Especialistas en Balayage, Extensiones y cuidado personalizado." />
+    <meta name="theme-color" content="#1b1b1b" />
+    <title>Lurdes Marques Cabeleireiros · Porto</title>
+  </head>
+  <body>
+    <!-- THESIS: A hair lookbook with a point of view, not a generic salon brochure.
+    OWN-WORLD: Reference pink, white, and black create a warm editorial salon catalogue.
+    STORY: Discover Lurdes Marques, see real work, find the right ritual, and message the team.
+    MOTION: The lookbook opens with a clipped hero image; service panels explain a category change, while crop/focus and bounded reveals keep the page tactile. Motion is progressive enhancement, and reduced motion removes spatial travel.
+    FIRST VIEWPORT: Asymmetric split with oversized thesis on the left, real hero image on the right, navigation rail and WhatsApp action in view.
+    FORM: Editorial grid, restrained rules, and a pink consultation menu keep the real work in focus.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance -->
+
+    <a class="skip-link" href="#conteudo">Saltar al contenido</a>
+    <div class="topline">
+      <span>Antas · Porto</span>
+      <span>Diagnóstico capilar</span>
+      <a href={whatsapp} target="_blank" rel="noreferrer">Escribinos por WhatsApp <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Lurdes Marques Cabeleireiros, inicio">
+        <span class="brand-mark">LM</span>
+        <span class="brand-text">Lurdes Marques<small>Cabeleireiros</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#historia">Historia</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contacto" class="nav-contact">Reservá tu cita <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span>Menú</span><i aria-hidden="true"></i>
+      </button>
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Navegación móvil" aria-hidden="true" data-mobile-menu>
+        <a href="#historia">Historia</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contacto">Contacto</a>
+        <a class="menu-whatsapp" href={whatsapp} target="_blank" rel="noreferrer">Abrir WhatsApp <span aria-hidden="true">↗</span></a>
+      </nav>
+        </header>
+        <noscript>
+          <nav class="noscript-nav" aria-label="Navegación principal sin JavaScript">
+            <a href="#historia">Historia</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </noscript>
+    
+        <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-grid-pattern" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="hero-location">Lurdes Marques · Porto</p>
+          <h1 id="hero-title">Pelo<br /><em>con intención.</em></h1>
+          <p class="hero-intro">Color, textura y cuidado para que tu pelo se sienta tan tuyo como tu historia.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href={whatsapp} target="_blank" rel="noreferrer">Hablemos por WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#portfolio">Ver trabajos <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src={images[0].src} alt={images[0].alt} width="900" height="1200" fetchpriority="high" />
+            <span class="image-stamp">Balayage<br />Extensiones</span>
+          </div>
+          <div class="hero-mini-card">
+            <img src={images[1].src} alt="" width="300" height="420" />
+            <span>Tu próximo<br /><strong>look</strong></span>
+          </div>
+          <span class="vertical-note">ANTAS · 4200—010 · PORTO</span>
+        </div>
+        <div class="hero-footer">
+          <span>Deslizá para descubrir</span><span class="hero-line"></span><span aria-hidden="true">↓</span>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="La esencia de Lurdes Marques">
+        <div><strong>2000</strong><span>el año en que<br />todo empezó</span></div>
+        <div><strong>Antas</strong><span>un espacio renovado<br />en mayo de 2022</span></div>
+        <div><strong>Balayage</strong><span>y extensiones<br />como especialidad</span></div>
+        <div><strong>Tu pelo</strong><span>nuestro punto<br />de partida</span></div>
+      </section>
+
+      <section class="story section-shell" id="historia" aria-labelledby="story-title">
+        <div class="section-number" aria-hidden="true">01</div>
+        <div class="story-media reveal">
+          <div class="story-tile" aria-hidden="true"></div>
+          <img src={images[8].src} alt="Detalle de un trabajo de cabello largo y luminoso" loading="lazy" width="800" height="1000" />
+          <span class="story-caption">hecho para vos</span>
+        </div>
+        <div class="story-copy reveal">
+          <p class="section-label">Una historia que sigue creciendo</p>
+          <h2 id="story-title">La belleza<br /><span>se siente.</span></h2>
+          <p>Lurdes Marques siempre supo que quería trabajar con el cabello. En 2000 abrió su primer espacio en Areosa con una idea simple: que cada clienta se sintiera bienvenida, cómoda y segura de estar en buenas manos.</p>
+          <p>Hoy, más de veinte años después, la historia continúa en Antas. Un salón más grande y moderno, renovado en 2022, pensado alrededor de tu bienestar.</p>
+          <blockquote>“Adoro mi trabajo porque consigo hacer a las personas más felices.”<cite>— Lurdes Marques</cite></blockquote>
+        </div>
+      </section>
+
+      <section class="services-section" id="servicios" aria-labelledby="services-title">
+        <div class="section-shell services-heading">
+          <div class="section-number" aria-hidden="true">02</div>
+          <div>
+            <p class="section-label">Un diagnóstico antes de cada decisión</p>
+            <h2 id="services-title">Tu pelo,<br /><span>bien leído.</span></h2>
+          </div>
+          <p class="services-lede">Cada servicio empieza escuchando. Elegimos técnica, color y tratamiento según lo que tu cabello necesita hoy.</p>
+        </div>
+            <div class="service-ribbon" aria-hidden="true"><span>COLOR · TEXTURA · CUIDADO · RITUAL · COLOR · TEXTURA · CUIDADO · RITUAL ·</span></div>
+            <div class="service-explorer section-shell">
+              <div class="service-tabs-rail">
+                <p class="service-tabs-label">Elegí tu punto de partida</p>
+                <div class="service-tabs" role="tablist" aria-label="Categorías de servicios">
+                  {serviceCategories.map((service, index) => (
+                    <button
+                      class={`service-tab ${index === 0 ? 'is-active' : ''}`}
+                      type="button"
+                      role="tab"
+                      id={`service-tab-${service.id}`}
+                      aria-controls={`service-panel-${service.id}`}
+                      aria-selected={index === 0 ? 'true' : 'false'}
+                      tabindex={0}
+                      data-service-tab={service.id}
+                    >
+                      <span>{service.number}</span>
+                      <strong>{service.title}</strong>
+                      <i aria-hidden="true">↗</i>
+                    </button>
+                  ))}
+                </div>
+                <span class="service-rail-note">Una consulta<br />empieza acá</span>
+              </div>
+              <div class="service-panels">
+                {serviceCategories.map((service, index) => (
+                  <article
+                    class={`service-panel ${index === 0 ? 'is-active' : ''}`}
+                    id={`service-panel-${service.id}`}
+                    role="tabpanel"
+                    aria-labelledby={`service-tab-${service.id}`}
+                    tabindex="0"
+                    data-service-panel={service.id}
+                  >
+                    <div class="service-panel-heading">
+                      <div><span class="service-panel-kicker">{service.number} / menú de servicios</span><h3>{service.title}</h3></div>
+                      <p>{service.description}</p>
+                    </div>
+                    <ul class="service-items">
+                      {service.items.map((item) => <li><span>{item}</span><span aria-hidden="true">↗</span></li>)}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div class="brand-row section-shell">
+          <span class="brand-row-label">Trabajamos con</span>
+          <span class="brand-name">great lengths</span><span class="brand-name brand-kerastase">Kérastase</span><span class="brand-name brand-loreal">L'Oréal</span>
+        </div>
+      </section>
+
+      <section class="portfolio section-shell" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="portfolio-heading">
+          <div class="section-number" aria-hidden="true">03</div>
+          <div><p class="section-label">Trabajo real, sin filtros</p><h2 id="portfolio-title">Mirá lo que<br /><span>podemos crear.</span></h2></div>
+          <a class="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quiero algo así <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="portfolio-filters" role="group" aria-label="Filtrar trabajos">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter-button" type="button" data-filter="morenas" aria-pressed="false">Morenas iluminadas</button>
+          <button class="filter-button" type="button" data-filter="loiros" aria-pressed="false">Rubios</button>
+          <button class="filter-button" type="button" data-filter="extensoes" aria-pressed="false">Extensiones</button>
+          <button class="filter-button" type="button" data-filter="curtos" aria-pressed="false">Cortos</button>
+          <button class="filter-button" type="button" data-filter="penteados" aria-pressed="false">Peinados</button>
+        </div>
+        <div class="portfolio-grid">
+          {images.map((image, index) => (
+            <button class={`portfolio-item ${image.size} reveal`} type="button" data-category={image.category} data-lightbox={image.src} data-alt={image.alt} aria-label={`Ver trabajo: ${image.alt}`}>
+              <img src={image.src} alt={image.alt} loading={index < 6 ? 'lazy' : 'lazy'} width="800" height="1000" />
+              <span class="portfolio-overlay"><span>{image.category === 'morenas' ? 'Morenas iluminadas' : image.category === 'loiros' ? 'Rubios' : image.category === 'extensoes' ? 'Extensiones' : image.category === 'curtos' ? 'Cortos' : 'Peinados'}</span><i aria-hidden="true">↗</i></span>
+            </button>
+          ))}
+        </div>
+        <div class="portfolio-end"><span>Más de 20 años creando looks que se sienten tuyos.</span><a href={whatsapp} target="_blank" rel="noreferrer">Empezar una conversación <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="contact-section" id="contacto" aria-labelledby="contact-title">
+        <div class="contact-grid-pattern" aria-hidden="true"></div>
+        <div class="section-shell contact-inner">
+          <div class="section-number" aria-hidden="true">04</div>
+          <div class="contact-copy"><p class="section-label">El próximo paso es fácil</p><h2 id="contact-title">¿Lo hablamos?</h2><p>Contanos qué servicio buscás y qué días te quedan bien. Te respondemos por WhatsApp para encontrar el momento ideal.</p><a class="button button-coral" href={whatsapp} target="_blank" rel="noreferrer">Abrir WhatsApp <span aria-hidden="true">↗</span></a></div>
+          <div class="contact-details"><div><span class="detail-label">Encontranos en</span><a href="https://maps.google.com/?q=Rua+Artur+de+Sousa+4200-010+Porto" target="_blank" rel="noreferrer">Rua Artur de Sousa, Entrada 2<br />Loja 1.2 · 4200-010 Porto ↗</a></div><div><span class="detail-label">Llamanos</span><a href={phoneHref}>{phone}</a></div><div><span class="detail-label">Seguinos</span><a href="https://www.instagram.com/lurdesmarquescabeleireiros/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.facebook.com/cabeleireiroslurdes.marques" target="_blank" rel="noreferrer">Facebook ↗</a></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">LM</span><span>Para mujeres<br /><em>que se valoran.</em></span></div><span>© {new Date().getFullYear()} Lurdes Marques Cabeleireiros</span><a href="#inicio">Volver arriba ↑</a></footer>
+    <a class="floating-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Abrir conversación de WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.12 0C5.57 0 .24 5.32.24 11.87c0 2.1.55 4.14 1.6 5.94L.14 24l6.34-1.66a11.88 11.88 0 0 0 5.64 1.43h.01c6.55 0 11.87-5.33 11.87-11.88 0-3.17-1.23-6.14-3.5-8.39ZM12.13 21.75h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.8 9.8 0 0 1-1.5-5.25c0-5.43 4.42-9.85 9.86-9.85 2.63 0 5.1 1.03 6.96 2.89a9.8 9.8 0 0 1 2.89 6.97c0 5.44-4.42 9.87-9.84 9.87Zm5.4-7.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.53.07-.8.38-.27.3-1.05 1.03-1.05 2.52s1.08 2.92 1.23 3.12c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.7.25-1.31.18-1.44-.08-.13-.28-.2-.58-.35Z" /></svg></a>
+    <div class="mobile-whatsapp"><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp <span>·</span> Reservá tu cita <strong>↗</strong></a></div>
+    <dialog class="lightbox" data-lightbox-dialog><button type="button" class="lightbox-close" data-lightbox-close aria-label="Cerrar imagen">×</button><img src={images[0].src} alt="" data-lightbox-image /><p data-lightbox-caption></p></dialog>
+
+    <script>
+      const menuToggle = document.querySelector('[data-menu-toggle]');
+      const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const closeMobileMenu = () => {
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        mobileMenu?.setAttribute('aria-hidden', 'true');
+        if (mobileMenu) mobileMenu.inert = true;
+        mobileMenu?.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        menuToggle?.focus();
+      };
+      if (mobileMenu) mobileMenu.inert = true;
+      menuToggle?.addEventListener('click', () => {
+        const open = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!open));
+        mobileMenu?.setAttribute('aria-hidden', String(open));
+        if (mobileMenu) mobileMenu.inert = open;
+        mobileMenu?.classList.toggle('is-open', !open);
+        document.body.classList.toggle('menu-open', !open);
+        if (!open) mobileMenu?.querySelector('a')?.focus();
+        else menuToggle.focus();
+      });
+      mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') closeMobileMenu();
+      });
+
+      const filters = document.querySelectorAll('[data-filter]');
+      const portfolioItems = document.querySelectorAll('[data-category]');
+      filters.forEach((filter) => filter.addEventListener('click', () => {
+        const value = filter.getAttribute('data-filter');
+        filters.forEach((button) => {
+          const active = button === filter;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        portfolioItems.forEach((item) => {
+          const visible = value === 'all' || item.getAttribute('data-category') === value;
+          item.classList.toggle('is-hidden', !visible);
+        });
+      }));
+
+      const serviceTabs = [...document.querySelectorAll('[data-service-tab]')];
+      const servicePanels = [...document.querySelectorAll('[data-service-panel]')];
+      const activateService = (id, moveFocus = false) => {
+        const activeTab = serviceTabs.find((tab) => tab.getAttribute('data-service-tab') === id);
+        serviceTabs.forEach((tab) => {
+          const active = tab === activeTab;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', String(active));
+          tab.tabIndex = active ? 0 : -1;
+        });
+        servicePanels.forEach((panel) => {
+          const active = panel.getAttribute('data-service-panel') === id;
+          panel.hidden = !active;
+          panel.classList.toggle('is-active', active);
+        });
+        if (moveFocus) activeTab?.focus();
+      };
+      serviceTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateService(tab.getAttribute('data-service-tab') || ''));
+        tab.addEventListener('keydown', (event) => {
+          if (!['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? serviceTabs.length - 1 : (index + (event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : -1) + serviceTabs.length) % serviceTabs.length;
+          serviceTabs[nextIndex]?.click();
+          serviceTabs[nextIndex]?.focus();
+        });
+      });
+      activateService('cabelo');
+    
+      document.body.classList.add('page-ready', 'reveal-enabled');
+      const revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries, obs) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        revealItems.forEach((item) => observer.observe(item));
+      } else revealItems.forEach((item) => item.classList.add('is-visible'));
+
+      const dialog = document.querySelector('[data-lightbox-dialog]');
+      const lightboxImage = document.querySelector('[data-lightbox-image]');
+      const lightboxCaption = document.querySelector('[data-lightbox-caption]');
+      document.querySelectorAll('[data-lightbox]').forEach((item) => item.addEventListener('click', () => {
+        if (!dialog || !lightboxImage) return;
+        lightboxImage.src = item.getAttribute('data-lightbox') || '';
+        lightboxImage.alt = item.getAttribute('data-alt') || '';
+        if (lightboxCaption) lightboxCaption.textContent = item.getAttribute('data-alt') || '';
+        dialog.showModal();
+      }));
+      document.querySelector('[data-lightbox-close]')?.addEventListener('click', () => dialog?.close());
+      dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    </script>
+  </body>
+</html>
